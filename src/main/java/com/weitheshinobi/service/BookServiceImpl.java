@@ -2,17 +2,14 @@ package com.weitheshinobi.service;
 
 import com.weitheshinobi.dao.BookMapper;
 import com.weitheshinobi.pojo.Books;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
-@Service
+
 public class BookServiceImpl implements BookService{
 
 //    service層調用dao層
-    @Autowired
     private BookMapper bookMapper;
 
     public void setBookMapper(BookMapper bookMapper) {

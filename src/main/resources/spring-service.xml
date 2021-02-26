@@ -6,9 +6,9 @@
     
     <context:component-scan base-package="com.weitheshinobi.service"/>
 
-<!--    <bean id="BookServiceImpl" class="com.weitheshinobi.service.BookServiceImpl">-->
-<!--        <property name="bookMapper" ref="bookMapper"/>-->
-<!--    </bean>-->
+    <bean id="BookServiceImpl" class="com.weitheshinobi.service.BookServiceImpl">
+        <property name="bookMapper" ref="bookMapper"/>
+    </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
