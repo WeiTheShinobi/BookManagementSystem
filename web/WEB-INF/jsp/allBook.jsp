@@ -23,6 +23,13 @@
             <div class="col-md-4 column">
                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增書籍</a>
             </div>
+            <div class="col-md-4 column"></div>
+            <div class="col-md-4 column form-inline">
+                <form action="${pageContext.request.contextPath}/book/queryBook" method="post" style="float: right">
+                    <input type="text" name="queryBookName" placeholder="書名查詢">
+                    <input type="submit" value="查詢" class="btn btn-primary">
+                </form>
+            </div>
         </div>
 
     </div>

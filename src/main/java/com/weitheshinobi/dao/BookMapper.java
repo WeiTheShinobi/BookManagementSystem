@@ -19,4 +19,7 @@ public interface BookMapper {
     //查詢全部書本
     List<Books> queryAllBook();
 
+//    書名查詢
+    List<Books> queryBookByName(@Param("bookName") String bookName);
+
 }

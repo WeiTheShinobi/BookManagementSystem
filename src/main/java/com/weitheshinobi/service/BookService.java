@@ -1,6 +1,7 @@
 package com.weitheshinobi.service;
 
 import com.weitheshinobi.pojo.Books;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +18,6 @@ public interface BookService {
     //查詢全部書本
     List<Books> queryAllBook();
 
+    List<Books> queryBookByName(String bookName);
 
 }

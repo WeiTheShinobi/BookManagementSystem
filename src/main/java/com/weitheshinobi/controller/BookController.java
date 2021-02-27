@@ -20,6 +20,7 @@ public class BookController {
     @Qualifier("BookServiceImpl")
     private BookService bookService;
 
+//    查詢所有書
     @RequestMapping("/allBook")
     public String list(Model model){
         List<Books> list = bookService.queryAllBook();
@@ -60,6 +61,14 @@ public class BookController {
     public String deleteBook(@PathVariable("bookID") int id){
         bookService.deleteBookById(id);
         return "redirect:/book/allBook";
+    }
+
+//    書名查詢
+    @RequestMapping("/queryBook")
+    public String queryBook(String queryBookName,Model model){
+        List<Books> books = bookService.queryBookByName(queryBookName);
+        model.addAttribute("list",books);
+        return "allBook";
     }
 
 }
