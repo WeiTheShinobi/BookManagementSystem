@@ -15,8 +15,8 @@ import java.util.List;
 public class BookController {
 
 //    調用service層
-@Autowired
-@Qualifier("BookServiceImpl")
+    @Autowired
+    @Qualifier("BookServiceImpl")
     private BookService bookService;
 
     @RequestMapping("/allBook")
@@ -24,6 +24,17 @@ public class BookController {
         List<Books> list = bookService.queryAllBook();
         model.addAttribute("list",list);
         return "allBook";
+    }
+
+    @RequestMapping("/toAddBook")
+    public String toAddPage(){
+        return "addBook";
+    }
+
+    @RequestMapping("/addBook")
+    public String addBook(Books books){
+        bookService.addBook(books);
+        return "redirect:/book/allBook";
     }
 
 }
