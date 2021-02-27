@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>增加書籍</title>
+    <title>修改</title>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -14,31 +14,33 @@
         <div class="col-md-12">
             <div class="page-header">
                 <h1>
-                    <small>新增書籍</small>
+                    <small>修改書籍</small>
                 </h1>
             </div>
         </div>
     </div>
 
-    <form action="${pageContext.request.contextPath}/book/addBook" method="">
+    <form action="${pageContext.request.contextPath}/book/updateBook" method="">
+
+        <input type="hidden" name="bookID" value="${queryBooks.bookID}">
         <div class="form-group">
             <label>書名</label>
-            <input type="text" name="bookName" class="form-control" required>
+            <input type="text" name="bookName" class="form-control" value="${queryBooks.bookName}" required>
         </div>
         <div class="form-group">
             <label>書籍數量</label>
-            <input type="text" name="bookCounts" class="form-control" required>
+            <input type="text" name="bookCounts" class="form-control" value="${queryBooks.bookCounts}" required>
         </div>
         <div class="form-group">
             <label>描述</label>
-            <input type="text" name="detail" class="form-control" required>
+            <input type="text" name="detail" class="form-control" value="${queryBooks.detail} "required>
         </div>
 
         <br>
         <br>
 
         <div class="from-group">
-            <input type="submit" class="form-control" value="添加">
+            <input type="submit" class="form-control" value="修改">
         </div>
     </form>
 
